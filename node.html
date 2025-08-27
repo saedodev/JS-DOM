@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node in JavaScript</title>
+</head>
+<body>
+    
+    <ul id="makanan">
+        <li id="menu1">Burger</li>
+        <li id="menu2">Kentang Goreng</li>
+        <li id="menu3">Ayam Goreng</li>
+    </ul>
+    
+     <ul id="minuman">
+        <li id="menu4">Soda Gembira</li>
+        <li id="menu5">Es teh</li>
+        <li id="menu6">Es jeruk</li>
+    </ul>
+
+    <ul id="tambahan">
+        <li id="menu7">bakso</li>
+        <li id="menu8">sosis</li>
+    </ul>
+
+    <script>
+        // node
+        const makanan = document.getElementById("makanan");
+        console.log(makanan);
+
+        const minuman = document.getElementById("minuman");
+        console.log(minuman);
+
+        // node property
+        console.log(makanan.childNodes);
+        console.log(minuman.childNodes);
+
+        // penggunaan property dalam JavaScript dengan sibling
+        console.log(minuman.previousSibling); // text
+        console.log(minuman.nextSibling); // text
+        console.log(menu5.previousElementSibling); // value li sebelumnya
+        console.log(menu5.nextElementSibling); // value li setelahnya
+
+        // node method
+        makanan.removeChild(document.getElementById("menu3"));
+
+        // mengubah menu tambahan dari bakso dan sosis menjadi takoyaki dan bakwan
+        const menu7 = document.getElementById("tambahan").children[0]; // index 0 = bakso
+        const menu8 = document.getElementById("tambahan").children[1]; // index 1 = sosis
+        const menu7baru = document.createTextNode("takoyaki");
+        const menu8baru = document.createTextNode("bakwan");
+        menu7.replaceChild(menu7baru, menu7.childNodes[0]); // index jangan diubah!
+        menu8.replaceChild(menu8baru, menu8.childNodes[0]); // index jangan diubah!
+
+    </script>
+
+</body>
+</html>
