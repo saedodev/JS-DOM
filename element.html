@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element in JavaScript</title>
+    <style>
+        #animate {
+            width: 120px;
+            height: 120px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 14px;
+            font-family: sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="judul1">Ini adalah judul pertama</h1>
+    <h2 id="judul2">Ini adalah judul kedua</h2>
+    <p id="deskripsi">Ini adalah Paragraf</p>
+
+    <div id="contentProperty" class="contentClassProperty">
+        <h1>Bagian ini adalah Element Property</h1>
+        <p>Bagian ini juga adalah Element Property</p>
+    </div>
+
+    <div id="createElement" class="createElement">
+    </div>
+        
+    <div id="contentMethod" class="contentClassMethod">
+        <div id="animate">
+            <h1 style="font-size:14px;">Animasi JavaScript</h1>
+        </div>
+    </div>
+
+    <script>
+        const judul1 = document.getElementById("judul1");
+        const judul2 = document.getElementById("judul2");
+        const deskripsi = document.getElementById("deskripsi");
+
+        // mengubah warna font html
+        judul1.style.color = "red";
+        judul2.style.color = "blue";
+        deskripsi.style.color = "green";
+
+        // mengubah bentuk font html
+        judul1.style.fontFamily = "Times New Roman, sans-serif";
+        judul2.style.fontFamily = "Georgia, cursive";
+        deskripsi.style.fontFamily = "Gill Sans, sans-serif";
+
+        // mengubah isi html
+        judul1.textContent = "Selamat belajar JavaScript Element";
+        judul2.textContent = "Mari lebih semangat lagi agar hidup menjadi lebih baik!";
+        deskripsi.textContent = "judul dan paragraf ini diganti dengan script JavaScript";
+
+        // Element Property
+        const content = document.getElementById("contentProperty");
+        console.log(content.id);
+        console.log(content.className);
+        console.log(content.tagName);
+
+        // Element Method Animation
+        const animateBox = document.getElementById("animate");
+
+        let x = window.innerWidth;  // mulai dari sisi kanan
+        const speed = 2; // kecepatan gerak
+        const y = window.innerHeight / 2 - animateBox.offsetHeight / 2; // posisinya di tengah
+
+        function animasi() {
+        x -= speed; // geser ke kiri
+
+        // kalau sudah lewat kiri layar, reset ke kanan lagi
+        if (x < -animateBox.offsetWidth) {
+        x = window.innerWidth;
+        }
+
+        animateBox.style.transform = `translate(${x}px, ${y}px)`;
+
+        requestAnimationFrame(animasi);
+        }
+        animasi();
+
+        // Create Element
+        const createElement = document.getElementById("createElement");
+
+        const insertTitle = document.createElement("h1");
+        insertTitle.textContent = "Judul ini Dibuat dengan Element";
+        createElement.appendChild(insertTitle);
+
+        const insertDesc = document.createElement("p");
+        insertDesc.textContent = "Deskripsi ini dibuat dengan Element";
+        createElement.appendChild(insertDesc);
+    </script>
+</body>
+</html>
