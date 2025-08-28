@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="menu1">
+        <li id="first">Pertama</li>
+        <li id="second">Kedua</li>
+        <li id="third">Ketiga</li>
+    </ul>
+
+    <ul id="menu2">
+        <li id="fourth">Ridho</li>
+        <li id="fifth">dan</li>
+        <li id="sixth">Nure</li>
+    </ul>
+    <script>
+        // NodeList akan merubah yang terjadi pada NodeList tapi tidak akan merubah semua Nodelist yang sama
+        // menggunakan querySelectorAll artinya bersifat NodeList Static
+        let list = document.querySelectorAll("li");
+
+        const menu1 = document.getElementById("menu1");
+        menu1.appendChild(document.createElement("li"));
+        menu1.appendChild(document.createElement("li"));
+
+        console.log(list);
+
+    </script>
+</body>
+</html>
