@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute</title>
+</head>
+<body>
+    <img id="nenekecil" src="https://i.ibb.co.com/vx13yhv8/nene-kecil-removebg-preview.png" alt="nene-kecil" border="0" />
+
+    <script>
+        const nenekecil = document.getElementById("nenekecil");
+        // const src = nenekecil.getAttributeNode("src"); < mengambil source value gambar dari getAttributeNode
+
+        // console.log(src.name);
+        // console.log(src.value);
+
+        // mengambil source value gambar langsung dengan getAttribute
+        const src = nenekecil.getAttribute("src");
+        console.log(src);
+    </script>
+    
+</body>
+</html>
